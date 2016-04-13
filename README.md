@@ -1,3 +1,19 @@
+
+
+instale o node.js
+
+clone o projeto,va para pasta do projeto e abra um git bash
+
+de um npm install e depois npm update e bower update.
+(capaz de ter alguns problemas se ocorrer de faltar alguma dependencia passo o folder necessario)
+
+baixe o bootstrap em http://getbootstrap.com/getting-started/
+coloque a pasta no app/bower_components
+
+npm start para rodar a aplicação
+
+
+O text abaixo é o do seed e pode ser usado de apoio
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
