@@ -1,0 +1,25 @@
+
+<div ng-controller="EditoraCtrl as ctrl">
+	<h1>Cadastrar Editora</h1>
+  <form name="myForm" ng-submit="ctrl.salvar()">
+     <div class="col-md-12">
+               Nome: <input type="text" name="nome" ng-model="ctrl.editora.nome" ng-minlength="5" required></input>
+							 <span ng-show="myForm.nome.$touched && myForm.nome.$invalid">Minimo de 5 caracteres</span>
+             </div>
+                <div class="col-md-12">
+               CNPJ: <input type="text" ng-model="ctrl.editora.cnpj" ></input>
+             </div>
+                <div class="col-md-12">
+               Endereço: <input type="text" name="endereco" ng-model="ctrl.editora.endereco" ng-minlength="5" required></input>
+							 <span ng-show="myForm.endereco.$touched && myForm.endereco.$invalid">Minimo de 5 caracteres</span>
+             </div>
+                <div class="col-md-12">
+               Telefone: <input type="number" name="telefone" ng-model="ctrl.editora.telefone" ng-minlength="10" required ng-maxlength="11"></input>
+							 <span ng-show="myForm.telefone.$touched && myForm.telefone.$invalid">Minimo de 10 caracteres e maximo de 11</span>
+             </div>
+
+               <input type="submit" value="Salvar">
+
+							 <span>{{resultado}}</span>
+           </form>
+</div>
