@@ -21,7 +21,14 @@ angular.module('myApp.editoraController', ['ngRoute'])
        };
 
   this.salvar = function() {
-    $http.post('http://localhost:8000/api/editora',JSON.stringify(this.editora));
+    $http.post('http://localhost:8000/api/editora',JSON.stringify(this.editora)).success(function(data, status, headers, config) {
+            console.log('Success: ', data, status, headers, config)
+            $scope.resultado="Cadastrado";
+        }).
+        error(function(data, status, headers, config) {
+            console.log('Error: ', data, status, headers, config)
+            $scope.resultado="Erro";
+        });
          console.log('User clicked register', this.editora);
          $scope.myForm.$setPristine();
          this.editora = {
@@ -31,7 +38,7 @@ angular.module('myApp.editoraController', ['ngRoute'])
                    telefone: ''
               };
               $scope.myForm.$setUntouched();
-              $scope.resultado="Cadastrado";
+
       };
 
 });

@@ -5,7 +5,8 @@ angular.module('myApp', [
   //'ngRoute',
   'ui.router',
   'myApp.editoraController',
-  'myApp.version'
+  'myApp.version',
+  'myApp.autorController'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/version'});
