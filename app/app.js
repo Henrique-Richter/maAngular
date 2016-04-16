@@ -4,7 +4,7 @@
 angular.module('myApp', [
   //'ngRoute',
   'ui.router',
-  'myApp.editora',
+  'myApp.editoraController',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {

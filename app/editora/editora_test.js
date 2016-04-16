@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.editora module', function() {
+describe('myApp.editoraController module', function() {
 
-  beforeEach(module('myApp.editora'));
+  beforeEach(module('myApp.editoraController'));
 
   describe('editora controller', function(){
 

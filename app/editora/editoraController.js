@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.editora', ['ngRoute'])
+angular.module('myApp.editoraController', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/editora', {
@@ -11,27 +11,6 @@ angular.module('myApp.editora', ['ngRoute'])
 
 .controller('EditoraCtrl', function($scope, $http) {
 
-  /*$scope.$watch('inputVal', function(te) {
-        if (te) {
-            console.log(te);
-            $http.post('http://localhost:8000/api/editora', {
-            nome: "testano",
-            telefone: "12345678912",
-            endereco: "jaguariuna",
-            cnpj: "08.580.281/0001-00"
-        });
-        }
-    });
-
-    $scope.salvar = function() {
-      $http.post('http://localhost:8000/api/editora', {
-        nome: nome,
-        telefone: "12345678912",
-        endereco: "jaguariuna",
-        cnpj: "08.580.281/0001-00"
-    });
-  }
-  */
 
 
   this.editora = {
