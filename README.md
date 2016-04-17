@@ -7,11 +7,17 @@ clone o projeto,va para pasta do projeto e abra um git bash
 de um npm install e depois npm update e bower update.
 (capaz de ter alguns problemas se ocorrer de faltar alguma dependencia passo o folder necessario)
 
-baixe o bootstrap em http://getbootstrap.com/getting-started/
-coloque a pasta no app/bower_components
+rode o comando bower install bootstrap para instalar o bootstrap e jquery
 
 npm start para rodar a aplicação
 
+Para roda-la em teste com servidor diferente do Diego instale o http server com o comando
+
+sudo npm install -g http-server
+
+Then you can start your own development web server to serve static files from a folder by running:
+
+http-server -a localhost -p 8000
 
 O text abaixo é o do seed e pode ser usado de apoio
 # angular-seed — the seed for AngularJS apps
