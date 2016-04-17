@@ -4,8 +4,11 @@ instale o node.js
 
 clone o projeto,va para pasta do projeto e abra um git bash
 
-de um npm install e depois npm update e bower update.
-(capaz de ter alguns problemas se ocorrer de faltar alguma dependencia passo o folder necessario)
+de npm install -g bower
+
+de um npm install (e depois npm update e bower update se necessario)
+(capaz de ter alguns problemas se ocorrer de faltar alguma dependencia passo o folder necessario(exemplo faltar o ui-router que ja esta no drive caso precise))
+
 
 rode o comando bower install bootstrap para instalar o bootstrap e jquery
 

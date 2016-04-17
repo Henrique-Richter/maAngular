@@ -6,7 +6,8 @@ angular.module('myApp', [
   'ui.router',
   'myApp.editoraController',
   'myApp.version',
-  'myApp.autorController'
+  'myApp.autorController',
+  'myApp.livroController'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/version'});

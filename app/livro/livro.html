@@ -1,0 +1,85 @@
+
+<div ng-controller="livroCtrl as ctrl"  ng-init="ctrl.getValores()">
+	<h1>Cadastrar livro</h1>
+	<form name="myForm" ng-submit="ctrl.salvar()">
+
+		<div class="row">
+			<div class="col-md-4">
+				<label for="titulo">Titulo:</label> <input type="text" name="titulo" class="form-control" ng-model="ctrl.livro.titulo" ng-minlength="5" required></input>
+				<span ng-show="myForm.titulo.$touched && myForm.titulo.$invalid">Minimo de 5 caracteres</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="resumo">Resumo:</label> <textarea rows="6" cols="60" type="text" name="resumo" class="form-control" ng-model="ctrl.livro.resumo" ng-minlength="50" required></textarea>
+				<span ng-show="myForm.resumo.$touched && myForm.resumo.$invalid">Minimo de 50 caracteres</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="Indice">Indice:</label> <input type="url" name="indice" class="form-control" ng-model="ctrl.livro.indice" ng-minlength="10" required></input>
+				<span ng-show="myForm.indice.$touched && myForm.indice.$invalid">Deve ser uma Url(com protocolo http)</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="precocusto">Preço Custo:</label> 	<input type="number" min="1" name="precocusto" ng-model="ctrl.livro.precocusto" required ></input>
+				<span ng-show="myForm.precocusto.$touched && myForm.precocusto.$invalid">Informe o custo</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="precovenda">Preço Venda:</label> 	<input type="number" min="{{ctrl.livro.precocusto}}" name="precovenda" ng-model="ctrl.livro.precovenda" required ></input>
+				<span ng-show="myForm.precovenda.$touched && myForm.precovenda.$invalid">Preço de venda deve ser maior que custo</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="estoque">Estoque:</label> 	<input type="number" min="1" name="estoque" ng-model="ctrl.livro.estoque" required ></input>
+				<span ng-show="myForm.estoque.$touched && myForm.estoque.$invalid">Informe o estoque</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="isbn">ISBN:</label> <input type="number" ng-pattern="\d+" min="1" name="isbn" ng-model="ctrl.livro.isbn" required ></input>
+				<span ng-show="myForm.isbn.$touched && myForm.isbn.$invalid">Informe o ISBN em formato valido</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="autores">Autores:</label>	<select class="form-control" name="autores" ng-model="ctrl.livro.autores" multiple required>
+					<option ng-repeat="autor in autores" value="{{ autor.id }}">{{ autor.nome }}</option>
+				</select>
+				<span ng-show="myForm.autores.$touched && myForm.autores.$invalid">Selecione ao menos um autor</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="editora">Editora:</label><select class="form-control" name="editora" ng-model="ctrl.livro.editora_id" required>
+					<option ng-repeat="editora in editora" value="{{ editora.id }}">{{ editora.nome }}</option>
+				</select>
+				<span ng-show="myForm.editora.$touched && myForm.editora.$invalid">Selecione ao menos uma editora</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="categorias">Categorias:</label>	<select class="form-control" name="categorias" ng-model="ctrl.livro.categorias" multiple>
+					<option ng-repeat="categoria in categorias" value="{{ categoria.id }}">{{ categoria.categoria }}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="dtPublicacao">Data de publicação:</label><input type="date" name="dtPublicacao" ng-model="ctrl.livro.dtPublicacao" required></input>
+				<span ng-show="myForm.dtPublicacao.$touched && myForm.dtPublicacao.$invalid">Informe a data de publicação</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<input type="submit" value="Salvar">
+			</div>
+		</div>
+		<span ng-show="!myForm.$touched">{{resultado}}</span>
+	</form>
+
+</div>
