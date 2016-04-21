@@ -10,6 +10,9 @@ angular.module('myApp.livroController', ['ngRoute'])
 }])
 
 .controller('livroCtrl', function($scope, $http) {
+  var today=new Date();
+  $scope.today = today.toISOString();
+  
   this.resetar =function(){
     this.livro={
       autores: [],

@@ -43,6 +43,7 @@ this.salvar = function() {
 
   var d = this.autor.dtNasc;
   this.autor.dtNasc = d.getFullYear() + "-" + d.getMonth() +"-"+ d.getDate();
+  //this.autor.dtNasc= this.autor.dtNasc.toISOString();
   var df = this.autor.dtFal;
   if(df != null){
     this.autor.dtFal = df.getFullYear() + "-" + df.getMonth() +"-"+ df.getDate();

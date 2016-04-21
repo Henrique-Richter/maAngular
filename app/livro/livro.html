@@ -70,13 +70,14 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<label for="dtPublicacao">Data de publicação:</label><input type="date" name="dtPublicacao" ng-model="ctrl.livro.dtPublicacao" required></input>
-				<span ng-show="myForm.dtPublicacao.$touched && myForm.dtPublicacao.$invalid">Informe a data de publicação</span>
+				<label for="dtPublicacao">Data de publicação:</label><input type="date" name="dtPublicacao" ng-model="ctrl.livro.dtPublicacao" max="{{today}}" required></input>
+				<span ng-show="myForm.dtPublicacao.$touched && myForm.dtPublicacao.$invalid">Informe uma data menor que a data atual</span>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-md-4">
-				<input type="submit" value="Salvar">
+				<input type="submit" value="Salvar"  ng-show="myForm.$valid">
 			</div>
 		</div>
 		<span ng-show="!myForm.$touched">{{resultado}}</span>
