@@ -11,6 +11,8 @@ angular.module('myApp.autorController', ['ngRoute'])
 
 .controller('autorCtrl', function($scope, $http) {
 
+  var today=new Date();
+  $scope.today = today.toISOString();
   /* não da para usar por retornar data mesmo quando com sucesso
   var erros='';
   angular.forEach(data, function(value, key) {
@@ -38,6 +40,7 @@ this.autor = {
 };
 
 this.salvar = function() {
+
   var d = this.autor.dtNasc;
   this.autor.dtNasc = d.getFullYear() + "-" + d.getMonth() +"-"+ d.getDate();
   var df = this.autor.dtFal;

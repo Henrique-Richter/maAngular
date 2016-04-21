@@ -2,35 +2,51 @@
 <div ng-controller="autorCtrl as ctrl">
 	<h1>Cadastrar autor</h1>
 	<form name="myForm" ng-submit="ctrl.salvar()">
-		<div class="col-md-12">
-			Nome *: <input type="text" name="nome" ng-model="ctrl.autor.nome" ng-minlength="5" required></input>
-			<span ng-show="myForm.nome.$touched && myForm.nome.$invalid">Minimo de 5 caracteres</span>
+		<div class="row">
+			<div class="col-md-4">
+			<label for="nome">	Nome *: </label><input class="form-control" type="text" name="nome" ng-model="ctrl.autor.nome" ng-minlength="5" required></input>
+				<span ng-show="myForm.nome.$touched && myForm.nome.$invalid">Minimo de 5 caracteres</span>
+			</div>
 		</div>
-		<div class="col-md-12">
-			Biografia *: <textarea type="text" rows="6" cols="60" name="biografia" ng-model="ctrl.autor.biografia" ng-minlength="75" required></textarea>
-			<span ng-show="myForm.biografia.$touched && myForm.biografia.$invalid">Minimo de 75 caracteres</span>
+		<div class="row">
+			<div class="col-md-4">
+			<label for="biografia">	Biografia *:</label> <textarea type="text" rows="6" cols="60" name="biografia" ng-model="ctrl.autor.biografia" ng-minlength="75" required></textarea>
+				<span ng-show="myForm.biografia.$touched && myForm.biografia.$invalid">Minimo de 75 caracteres</span>
+			</div>
 		</div>
-		<div class="col-md-12">
-			Data de Nascimento *: <input type="date" name="dtNasc" ng-model="ctrl.autor.dtNasc" required></input>
-			<span ng-show="myForm.dtNasc.$touched && myForm.dtNasc.$invalid">Campo obrigatorio</span>
+		<div class="row">
+			<div class="col-md-4">
+			<label for="dtNasc">	Data de Nascimento *:</label> <input class="form-control" type="date" name="dtNasc" ng-model="ctrl.autor.dtNasc"  max="{{today}}" required></input>
+				<span ng-show="myForm.dtNasc.$touched && myForm.dtNasc.$invalid">Informe uma data menor que a atual</span>
+			</div>
 		</div>
-
-		<div class="col-md-12">
-			Local de Nascimento *: <input type="text" name="localNasc" ng-model="ctrl.autor.localNasc" ng-minlength="5" required></input>
+		<div class="row">
+			<div class="col-md-4">
+			<label for="localNasc">	Local de Nascimento *:</label> <input class="form-control" type="text" name="localNasc" ng-model="ctrl.autor.localNasc" ng-minlength="5" required></input>
+			</div>
 		</div>
 		<span ng-show="myForm.localNasc.$touched && myForm.localNasc.$invalid">Minimo de 5 caracteres</span>
-		<div class="col-md-12">
-			Selecionar caso o Autor já tenha falecido	<input type="checkbox" ng-model="checked" aria-label="Toggle ngHide">
+		<div class="row">
+			<div class="col-md-4">
+			<label for="check">	Selecionar caso o Autor já tenha falecido</label>	<input type="checkbox" name="check" ng-model="check" aria-label="Toggle ngHide">
+			</div>
 		</div>
-		<div class="col-md-12" ng-show="checked">
-			Data de Falecimento: <input type="date" name="dtFal" ng-model="ctrl.autor.dtFal" ></input>
+		<span  ng-show="check">
+		<div class="row" >
+			<div class="col-md-4" >
+			<label for="dtFal">	Data de Falecimento: </label><input class="form-control" type="date" name="dtFal" ng-model="ctrl.autor.dtFal" max="{{today}}" min="{{ctrl.autor.dtNasc.toISOString()}}" ng-required="check"></input>
+			<span ng-show="myForm.dtFal.$touched && myForm.dtFal.$invalid">Informe uma data maior que a de nascimento valida</span>
+			</div>
 		</div>
-		<div class="col-md-12" ng-show="checked">
-			Local de Falecimento: <input type="text" name="localFal" ng-model="ctrl.autor.localFal" ></input>
+		<div class="row">
+			<div class="col-md-4">
+			<label for="localFal">	Local de Falecimento: </label><input class="form-control" type="text" name="localFal" ng-model="ctrl.autor.localFal" ng-required="check"></input>
+			<span ng-show="myForm.localFal.$touched && myForm.localFal.$invalid">Minimo de 5 caracteres</span>
+			</div>
 		</div>
-
+	</span>
 		<div class="col-md-4">
-			Campos com * são obrigatorios <input type="submit" value="Salvar">
+			<label for="save">	Campos com * são obrigatorios </label> <input type="submit" ng-show="myForm.$valid" name="save" value="Salvar">
 		</div>
 		<span ng-show="!myForm.nome.$touched && !myForm.biografia.$touched && !myForm.dtNasc.$touched  && !myForm.localNasc.$touched && !myForm.dtFal.$touched  && !myForm.localFal.$touched">{{resultado}}</span>
 	</form>
