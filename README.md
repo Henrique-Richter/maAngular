@@ -1,4 +1,8 @@
 
+Novidade{
+
+    rode o comando bower install angular-ui-mask
+}
 
 instale o node.js
 
