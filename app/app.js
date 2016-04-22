@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.editoraController',
   'myApp.version',
   'myApp.autorController',
-  'myApp.livroController'
+  'myApp.livroController',
+  'myApp.indexController'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/version'});

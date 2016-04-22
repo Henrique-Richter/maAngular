@@ -1,0 +1,15 @@
+<div ng-controller="livroCtrl as ctrl">
+
+  <ul class="list-group">
+              <li class="list-group-item"  ng-repeat="livros in livros">
+
+                  <h5>Titulo= {{livros.titulo}}</h5>
+                  <h5>Preço= {{livros.precovenda}}</h5>
+                  <div ng-repeat="autor in livros.autores">
+                    <h5>Autor= {{autor.nome}}</h5>
+                  </div>
+
+              </li>
+          </ul>
+
+</div>

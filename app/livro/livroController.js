@@ -6,13 +6,16 @@ angular.module('myApp.livroController', ['ngRoute'])
   $routeProvider.when('/livro', {
     templateUrl: 'livro/livro.html',
     controller: 'livroCtrl'
+  }).when('/listarLivro', {
+    templateUrl: 'livro/listar.html',
+    controller: 'livroCtrl'
   });
 }])
 
 .controller('livroCtrl', function($scope, $http) {
   var today=new Date();
   $scope.today = today.toISOString();
-  
+
   this.resetar =function(){
     this.livro={
       autores: [],
