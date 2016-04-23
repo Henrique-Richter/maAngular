@@ -12,6 +12,17 @@ angular.module('myApp.indexController', ['ngRoute'])
 .controller('indexCtrl', function($scope, $http,$timeout,$location) {
 
 
+  this.removerDoCarrinho=function($index){
+    this.carrinho.splice($index,1);
+  }
+  this.atualizarCarrinho=function(value,$index){
+
+    var copia=angular.copy(this.carrinho[$index]);
+  
+    copia.quantidade=copia.quantidade + value;
+    this.carrinho.splice($index, 1);
+    this.carrinho.splice($index, 0, copia);
+  }
 
   this.produto={
     id: null ,

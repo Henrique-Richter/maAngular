@@ -1,39 +1,44 @@
 <div>
   <div class="container">
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Titulo</th>
-        <th>Preço</th>
-        <th>Sub-total</th>
-        <th>Quantidade</th>
-        <th>Excluir</th>
-      </tr>
-    </thead>
-    <tbody>
-  <tr ng-repeat="carrinho in indexCtrl.carrinho">
-    <td><a href="#/visualizarLivro/{{carrinho.id}}">{{carrinho.titulo}}</a></td>
-    <td>{{ carrinho.preco }}</td>
-    <td>{{carrinho.preco*carrinho.quantidade}}</td>
-    <td>  <center><button type="button" class="btn btn-info">
-        <span class="glyphicon glyphicon-minus"></span>
-      </button>
-      {{carrinho.quantidade}}
-      <button type="button" class="btn btn-info">
-        <span class="glyphicon glyphicon-plus"></span>
-      </button></center></td>
-      <td><center><button type="button" class="btn btn-info">
-        <span class="glyphicon glyphicon-remove"></span>
-      </button></center></td>
-  </tr>
-</tbody>
-<tfoot>
-    <tr>
-      <td>Total</td>
-      <td>{{indexCtrl.getTotal()}}</td>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Preço</th>
+          <th>Sub-total</th>
+          <th>Quantidade</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="carrinho in indexCtrl.carrinho">
+          <td><a href="#/visualizarLivro/{{carrinho.id}}">{{carrinho.titulo}}</a></td>
+          <td>R$ {{ carrinho.preco }}</td>
+          <td>R$ {{carrinho.preco*carrinho.quantidade}}</td>
+          <td>  <center><button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(-1,$index)" ng-show="carrinho.quantidade > 1" >
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+          {{carrinho.quantidade}}
+          <button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(1,$index)" ng-show="carrinho.quantidade <carrinho.estoque">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button></center></td>
+          <td><center><button type="button" class="btn btn-info" ng-click="indexCtrl.removerDoCarrinho($index)" >
+            <span class="glyphicon glyphicon-remove"></span>
+          </button></center></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>R$ {{indexCtrl.getTotal()}}</td>
+          <td> <center> <button type="button" class="btn btn-info"  >
+            Finalizar
+          </button>
+        </center>
+      </td>
     </tr>
   </tfoot>
 </table>
-  </div>
+</div>
 </div>
