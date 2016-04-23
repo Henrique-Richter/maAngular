@@ -9,12 +9,17 @@ angular.module('myApp.livroController', ['ngRoute'])
   }).when('/listarLivro', {
     templateUrl: 'livro/listar.html',
     controller: 'livroCtrl'
+  }).when('/visualizarLivro/:id', {
+    templateUrl: 'livro/visualizarLivro.html',
+    controller: 'livroCtrl'
   });
 }])
 
-.controller('livroCtrl', function($scope, $http) {
+.controller('livroCtrl', function($scope, $http,$routeParams) {
   var today=new Date();
   $scope.today = today.toISOString();
+
+
 
   this.resetar =function(){
     this.livro={
@@ -88,5 +93,12 @@ angular.module('myApp.livroController', ['ngRoute'])
       $scope.categorias= data;
     });
   };
+
+   this.getLivros = function(){
+      $http.get('http://localhost:8000/api/livro/'+$routeParams.id).success(function(data){
+        console.log(data);
+        $scope.livroID= data;
+      });
+   };
 
 });

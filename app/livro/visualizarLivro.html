@@ -1,0 +1,38 @@
+<div ng-controller="livroCtrl as ctrl" ng-init="ctrl.getLivros()" >
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1><center>{{livroID.titulo}}</center></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div  class="panel panel-default">
+        <div class="panel-heading">Resumo</div>
+        <div class="panel-body">{{livroID.resumo}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div  class="panel panel-default">
+        <div class="panel-heading">Autor(es)</div>
+        <div class="panel-body" ng-repeat="autor in livroID.autores">{{autor.nome}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div  class="panel panel-default">
+        <div class="panel-heading">Categoria(s)</div>
+        <div class="panel-body" ng-repeat="categoria in livroID.categorias">{{categoria.categoria}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      Indice: <a href="{{livroID.indice}}">{{livroID.indice}}</a>
+      <h3>Preço: <small>R${{livroID.precovenda}}</small></h3>
+    </div>
+    <div class="col-md-4">
+      <label for="quantia"> Quantia:</label> 	<input type="number" min="1" max="{{livroID.estoque}}"name="quantia{{livroID.id}}"  required ></input>
+      <button type="submit" class="btn btn-default" >Adicionar</button></h5>
+    </div>
+  </div>
+</div>
