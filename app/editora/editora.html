@@ -23,7 +23,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<label for="telefone">	Telefone: </label><input type="number" class="form-control"  min="1" pattern="\d+" name="telefone" ng-model="ctrl.editora.telefone" ng-minlength="10" ng-maxlength="11"  required ></input>
+			<label for="telefone">	Telefone: </label><input type="number" class="form-control"  min="1" pattern="\d+" name="telefone" ng-model="ctrl.editora.telefone" step="1" ng-minlength="10" ng-maxlength="11"  required ></input>
 			<span ng-show="myForm.telefone.$touched && myForm.telefone.$invalid">Minimo de 10 caracteres e maximo de 11(somente numeros)</span>
 		</div>
 </div>
