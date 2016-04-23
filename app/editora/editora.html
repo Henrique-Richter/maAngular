@@ -4,26 +4,26 @@
 	<form name="myForm" ng-submit="ctrl.salvar()">
 		<div class="row">
 			<div class="col-md-4">
-		<label for="nome">	Nome: </label><input type="text" name="nome" ng-model="ctrl.editora.nome" ng-minlength="5" required></input>
+		<label for="nome">	Nome: </label><input type="text"  class="form-control"  name="nome" ng-model="ctrl.editora.nome" ng-minlength="5" required></input>
 			<span ng-show="myForm.nome.$touched && myForm.nome.$invalid">Minimo de 5 caracteres</span>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
-			<label for="cnpj">	CNPJ: </label><input type="text" name="cnpj" ng-model="ctrl.editora.cnpj" ui-mask="99.999.999/9999-99" model-view-value="true"  required></input>
+		<div class="col-md-2">
+			<label for="cnpj">	CNPJ: </label><input type="text"  class="form-control"  name="cnpj" ng-model="ctrl.editora.cnpj" ui-mask="99.999.999/9999-99" model-view-value="true"  required></input>
 			<span ng-show="myForm.cnpj.$touched && myForm.cnpj.$invalid">Digite um CNPJ valido</span>
 
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<label for="endereco">	Endereço: </label><input type="text" name="endereco" ng-model="ctrl.editora.endereco" ng-minlength="5" required></input>
+			<label for="endereco">	Endereço: </label><input  class="form-control"  type="text" name="endereco" ng-model="ctrl.editora.endereco" ng-minlength="5" required></input>
 			<span ng-show="myForm.endereco.$touched && myForm.endereco.$invalid">Minimo de 5 caracteres</span>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<label for="telefone">	Telefone: </label><input type="number" min="1" pattern="\d+" name="telefone" ng-model="ctrl.editora.telefone" ng-minlength="10" ng-maxlength="11"  required ></input>
+			<label for="telefone">	Telefone: </label><input type="number" class="form-control"  min="1" pattern="\d+" name="telefone" ng-model="ctrl.editora.telefone" ng-minlength="10" ng-maxlength="11"  required ></input>
 			<span ng-show="myForm.telefone.$touched && myForm.telefone.$invalid">Minimo de 10 caracteres e maximo de 11(somente numeros)</span>
 		</div>
 </div>
