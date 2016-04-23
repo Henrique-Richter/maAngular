@@ -14,11 +14,11 @@ angular.module('myApp.indexController', ['ngRoute'])
 
 
   this.produto={
-    id: "" ,
-    quantidade: "",
-    titulo: "",
-    preco: "",
-    estoque: ""
+    id: null ,
+    quantidade: null,
+    titulo: null,
+    preco: null,
+    estoque: null
   };
 
   this.carrinho =[];
@@ -69,8 +69,16 @@ angular.module('myApp.indexController', ['ngRoute'])
   }
 
 
+//metodo para pegar o total
 
-
+  this.getTotal = function(){
+    var total = 0;
+    for(var i = 0; i < this.carrinho.length; i++){
+        var product = this.carrinho[i];
+        total += (product.preco * product.quantidade);
+    }
+    return total;
+}
 
 
     $scope.countdown = function() {
@@ -79,7 +87,8 @@ angular.module('myApp.indexController', ['ngRoute'])
       var countDown = function () {
       if (timerCount < 0) {
         //Any desired function upon countdown end.
-        //$window.close();
+        //  this.carrinho=[];
+          $location.path("index");
         console.log("Terminou");
       } else {
         var minutes = Math.floor(timerCount / 60);
@@ -99,6 +108,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 
   };
 
+
   this.resetTime = function(){
     console.log("teste ok");
     timerCount= 1200;
@@ -111,7 +121,7 @@ angular.module('myApp.indexController', ['ngRoute'])
       $scope.livros= data;
       console.log(data, status, headers, config);
     });
-    console.log("teste redirecionar");
+  //  console.log("teste redirecionar");
     this.resetar();
   };
 

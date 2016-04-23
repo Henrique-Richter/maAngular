@@ -13,6 +13,7 @@ angular.module('myApp.editoraController', ['ngRoute'])
 
 
 
+
   this.editora = {
     nome: '',
     cnpj: '',
