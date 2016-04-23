@@ -1,22 +1,17 @@
 <div ng-controller="livroCtrl as ctrl">
-
   <ul class="list-group">
     <li class="list-group-item"  ng-repeat="livros in livros">
-
       <h5>Titulo: {{livros.titulo}}</h5>
       <h5>Preço= R$ {{livros.precovenda}}
-        <label for="quantia"> Quantia:</label> 	<input type="number" min="1" max="{{livros.estoque}}"name="quantia{{livros.id}}"  required ></input>
-        <button type="submit" class="btn btn-default" >Adicionar</button></h5>
+        <label for="quantia{{livros.id}}"> Quantia:</label> 	<input type="number" min="1" max="{{livros.estoque}}" name="quantia{{livros.id}}" ng-model="quantia"  required ></input>
+        <button type="submit" ng-click="indexCtrl.adicionarCarrinho(livros.id,quantia,livros.titulo,livros.precovenda)" class="btn btn-default"  ng-show="quantia>0" >Adicionar</button></h5>
         <h5>Autor(es):
           <span ng-repeat="autor in livros.autores">
             {{autor.nome}};
           </span>
         </h5>
         <h5><a href="#/visualizarLivro/{{livros.id}}">Ver mais ...</a></h5>
-
-
       </li>
       <li ng-show="!livros.length">Nenhum livro com estes dados</li>
     </ul>
-
   </div>
