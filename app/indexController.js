@@ -17,18 +17,21 @@ angular.module('myApp.indexController', ['ngRoute'])
     id: "" ,
     quantidade: "",
     titulo: "",
-    preco: ""
+    preco: "",
+    estoque: ""
   };
 
   this.carrinho =[];
 
-    this.adicionarCarrinho= function(id,quantidade,titulo,preco){
-    //  console.log(id,quantidade,titulo,preco);
+    this.adicionarCarrinho= function(id,quantidade,titulo,preco,estoque){
+     console.log(id,quantidade,titulo,preco,estoque);
 
       this.produto.id=id;
       this.produto.quantidade=quantidade;
       this.produto.titulo=titulo;
       this.produto.preco=preco;
+      this.produto.estoque = estoque;
+
       var copia=angular.copy(this.produto);
 
       var found = false;
