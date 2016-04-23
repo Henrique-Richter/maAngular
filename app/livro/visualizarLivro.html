@@ -29,6 +29,7 @@
     <div class="col-md-4">
       Indice: <a href="{{livroID.indice}}">{{livroID.indice}}</a>
       <h3>Preço: <small>R${{livroID.precovenda}}</small></h3>
+      <h3>Data de Publicação: <small>{{livroID.dtPublicacao}}</small></h3>
     </div>
     <div class="col-md-4">
       <label for="quantia"> Quantia:</label> 	<input type="number" min="1" max="{{livroID.estoque}}"name="quantia{{livroID.id}}"  required ></input>

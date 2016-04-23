@@ -21,7 +21,7 @@ angular.module('myApp.editoraController', ['ngRoute'])
   };
 
   this.salvar = function() {
-    $http.post('http://localhost:8000/api/editora',JSON.stringify(this.editora)).success(function(data, status, headers, config) {
+    $http.post('http://localhost:8000/api/editora',this.editora).success(function(data, status, headers, config) {
       console.log('Success: ', data, status, headers, config)
       $scope.resultado="Cadastrado";
     }).
