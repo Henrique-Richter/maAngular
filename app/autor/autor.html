@@ -46,7 +46,7 @@
 		</div>
 	</span>
 		<div class="col-md-4">
-			<label for="save">	Campos com * são obrigatorios </label> <input type="submit" ng-show="myForm.$valid" name="save" value="Salvar">
+			<label for="save">	Campos com * são obrigatorios </label> <input type="submit" class="btn btn-default" ng-disabled="myForm.$invalid" name="save" value="Salvar">
 		</div>
 		<span ng-show="!myForm.nome.$touched && !myForm.biografia.$touched && !myForm.dtNasc.$touched  && !myForm.localNasc.$touched && !myForm.dtFal.$touched  && !myForm.localFal.$touched">{{resultado}}</span>
 	</form>

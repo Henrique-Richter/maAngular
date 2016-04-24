@@ -16,11 +16,11 @@
           <td><a href="#/visualizarLivro/{{carrinho.id}}">{{carrinho.titulo}}</a></td>
           <td>R$ {{ carrinho.preco }}</td>
           <td>R$ {{carrinho.preco*carrinho.quantidade}}</td>
-          <td>  <center><button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(-1,$index)" ng-show="carrinho.quantidade > 1" >
+          <td>  <center><button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(-1,$index)" ng-disabled="carrinho.quantidade < 2" >
             <span class="glyphicon glyphicon-minus"></span>
           </button>
           {{carrinho.quantidade}}
-          <button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(1,$index)" ng-show="carrinho.quantidade <carrinho.estoque">
+          <button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(1,$index)" ng-disabled="carrinho.quantidade >=carrinho.estoque">
             <span class="glyphicon glyphicon-plus"></span>
           </button></center></td>
           <td><center><button type="button" class="btn btn-info" ng-click="indexCtrl.removerDoCarrinho($index)" >

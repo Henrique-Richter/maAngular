@@ -1,8 +1,4 @@
 
-Novidade{
-
-    rode o comando bower install angular-ui-mask
-}
 
 instale o node.js
 
@@ -20,7 +16,9 @@ npm start para rodar a aplicação
 
 Para roda-la em teste com servidor diferente do Diego instale o http server com o comando
 
-sudo npm install -g http-server
+npm install -g http-server
+
+rode o comando bower install angular-ui-mask
 
 Then you can start your own development web server to serve static files from a folder by running:
 
