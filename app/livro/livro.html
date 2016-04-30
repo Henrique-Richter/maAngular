@@ -35,7 +35,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<label for="estoque">Estoque:</label> 	<input type="number" min="1" name="estoque" ng-model="ctrl.livro.estoque" required ></input>
+				<label for="estoque">Estoque:</label> 	<input type="number" min="1" max="2147483647" name="estoque" ng-model="ctrl.livro.estoque" required ></input>
 				<span ng-show="myForm.estoque.$touched && myForm.estoque.$invalid">Informe o estoque</span>
 			</div>
 		</div>
