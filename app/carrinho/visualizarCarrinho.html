@@ -22,7 +22,10 @@
           {{carrinho.quantidade}}
           <button type="button" class="btn btn-info" ng-click="indexCtrl.atualizarCarrinho(1,$index)" ng-disabled="carrinho.quantidade >=carrinho.estoque">
             <span class="glyphicon glyphicon-plus"></span>
-          </button></center></td>
+          </button></center>
+          <span ng-if="carrinho.quantidade >=carrinho.estoque">
+                    Estoque limite
+             </span></td>
           <td><center><button type="button" class="btn btn-info" ng-click="indexCtrl.removerDoCarrinho($index)" >
             <span class="glyphicon glyphicon-remove"></span>
           </button></center></td>

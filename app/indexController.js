@@ -18,7 +18,7 @@ angular.module('myApp.indexController', ['ngRoute'])
   this.atualizarCarrinho=function(value,$index){
 
     var copia=angular.copy(this.carrinho[$index]);
-  
+
     copia.quantidade=copia.quantidade + value;
     this.carrinho.splice($index, 1);
     this.carrinho.splice($index, 0, copia);
@@ -128,7 +128,7 @@ angular.module('myApp.indexController', ['ngRoute'])
   this.pesquisar= function(){
     console.log(this.pesquisa);
     $location.path("listarLivro");
-    $http.get('http://localhost:8000/api/livro/'+this.pesquisa.titulo+"/"+this.pesquisa.editora+"/"+this.pesquisa.categoria+"/"+this.pesquisa.autor).success(function(data, status, headers, config){
+    $http.post('http://localhost:8000/api/livro/busca',this.pesquisa).success(function(data, status, headers, config){
       $scope.livros= data;
       console.log(data, status, headers, config);
     });
