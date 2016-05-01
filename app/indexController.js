@@ -64,7 +64,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 		}else{
 			alert("Já existe no carrinho");
 		}
-
+		console.log(this.carrinho)
 	};
 
   //$scope.counter = 100;
@@ -105,6 +105,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 	        $scope.cart.length = 0;
 	        alert('Carrinho resetado!');
 	        $location.path("index");
+	        console.log($scope.cart);
 	    } else {
 	    	var minutes = Math.floor(timerCount / 60);
 	    	var seconds = timerCount - minutes * 60;
@@ -125,7 +126,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 
 
 	var resetTime = function(){
-		console.log("teste ok");
+		
 		timerCount= 1200;
 	};
 
