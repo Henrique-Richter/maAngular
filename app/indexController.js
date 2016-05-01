@@ -24,7 +24,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 		this.carrinho.splice($index, 0, copia);
 	}
 
-	$scope.$on('$routeChangeStart', function(next, current) {
+	$scope.$on('$routeChangeStart', function(next, current) { 
 		resetTime();
 	});
 
@@ -37,6 +37,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 	};
 
 	this.carrinho =[];
+	$scope.cart = this.carrinho;
 
 	this.adicionarCarrinho= function(id,quantidade,titulo,preco,estoque){
 		console.log(id,quantidade,titulo,preco,estoque);
@@ -66,7 +67,8 @@ angular.module('myApp.indexController', ['ngRoute'])
 
 	};
 
-	
+  //$scope.counter = 100;
+
   this.resetar = function(){
   	this.pesquisa={
   		titulo:null,
@@ -93,18 +95,16 @@ angular.module('myApp.indexController', ['ngRoute'])
 		}
 		return total;
 	}
-//	var  timerCount = 1200;
-var  timerCount = 10;
+	var timerCount = 1200;
 	$scope.countdown = function() {
 
 		var countDown = function () {
 			if (timerCount < 0) {
 	        //Any desired function upon countdown end.
-	         //this.carrinho=[];
-
-
+	        //  this.carrinho=[];
+	        $scope.cart.length = 0;
+	        alert('Carrinho resetado!');
 	        $location.path("index");
-	        console.log("Terminou");
 	    } else {
 	    	var minutes = Math.floor(timerCount / 60);
 	    	var seconds = timerCount - minutes * 60;
@@ -113,7 +113,6 @@ var  timerCount = 10;
 	    	timerCount--;
 	    	$timeout(countDown, 1000);
 	    }
-
 	};
 	var minutes = Math.floor(timerCount / 60);
 	var seconds = timerCount - minutes * 60;
@@ -127,7 +126,7 @@ var  timerCount = 10;
 
 	var resetTime = function(){
 		console.log("teste ok");
-		timerCount= 10;
+		timerCount= 1200;
 	};
 
 	this.pesquisar= function(){
