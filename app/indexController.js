@@ -64,7 +64,8 @@ angular.module('myApp.indexController', ['ngRoute'])
 		}else{
 			alert("Já existe no carrinho");
 		}
-		console.log(this.carrinho)
+		
+		if($scope.cart.length == 1 ) $scope.countdown();
 	};
 
   //$scope.counter = 100;
