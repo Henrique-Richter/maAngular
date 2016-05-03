@@ -24,7 +24,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 		this.carrinho.splice($index, 0, copia);
 	}
 
-	$scope.$on('$routeChangeStart', function(next, current) { 
+	$scope.$on('$routeChangeStart', function(next, current) {
 		resetTime();
 	});
 
@@ -64,7 +64,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 		}else{
 			alert("Já existe no carrinho");
 		}
-		
+
 		if($scope.cart.length == 1 ) $scope.countdown();
 	};
 
@@ -96,7 +96,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 		}
 		return total;
 	}
-	var timerCount = 1200;
+	var timerCount = 10;
 	$scope.countdown = function() {
 
 		var countDown = function () {
@@ -127,7 +127,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 
 
 	var resetTime = function(){
-		
+
 		timerCount= 1200;
 	};
 

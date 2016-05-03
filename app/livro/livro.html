@@ -23,6 +23,24 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
+				<label for="Paginas">Número de páginas:</label> <input type="number" name="paginas" class="form-control" ng-model="ctrl.livro.paginas" min="1" required></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="Formato">Formato:</label>
+					<p>
+					<label for="dura">Capa dura:</label>
+					<input id="dura" type="radio" ng-value="dura" name="formato" ng-model="ctrl.livro.formato">
+				</p>
+				<p>
+					<label for="brochura">Brochura:</label>
+					<input id="brochura" type="radio" ng-value="brochura" name="formato" ng-model="ctrl.livro.formato">
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
 				<label for="precocusto">Preço Custo:</label> 	<input type="number" min="1" step="0.01" name="precocusto" ng-model="ctrl.livro.precocusto" required ></input>
 				<span ng-show="myForm.precocusto.$touched && myForm.precocusto.$invalid">Informe o custo</span>
 			</div>
