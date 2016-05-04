@@ -15,13 +15,30 @@
     <div class="col-md-4">
       <div  class="panel panel-default">
         <div class="panel-heading">Autor(es)</div>
-        <div class="panel-body" ng-repeat="autor in livroID.autores">{{autor.nome}}</div>
+        <div class="panel-body" ng-repeat="autor in livroID.autores">
+          <div>  Autor: {{autor.nome}}</div>
+          <div> Biografia: {{autor.biografia}}</div>
+          <div> Data de Nascimento : {{autor.dtNasc}}</div>
+          <div> Local de Nascimento : {{autor.localNasc}}</div>
+          <span ng-show="autor.dtFal!=null">
+            <div> Data de Falecimento : {{autor.dtFal}}</div>
+            <div> Local de Falecimento : {{autor.localFal}}</div>
+          </span>
+        </div>
       </div>
     </div>
     <div class="col-md-4">
       <div  class="panel panel-default">
         <div class="panel-heading">Categoria(s)</div>
         <div class="panel-body" ng-repeat="categoria in livroID.categorias">{{categoria.categoria}}</div>
+      </div>
+      <div  class="panel panel-default">
+        <div class="panel-heading">Editora</div>
+
+        <div> Editora:{{livroID.editora.nome}}</div>
+        <div> Endereço:{{livroID.editora.endereco}}</div>
+        <div> telefone:{{livroID.editora.telefone}}</div>
+
       </div>
     </div>
   </div>
@@ -30,6 +47,10 @@
       Indice: <a href="{{livroID.indice}}">{{livroID.indice}}</a>
       <h3>Preço: <small>R${{livroID.precovenda}}</small></h3>
       <h3>Data de Publicação: <small>{{livroID.dtPublicacao}}</small></h3>
+    </div>
+    <div class="col-md-4">
+      <h3>Formato: <small>{{livroID.formato}}</small></h3>
+      <h3>Número de páginas: <small>{{livroID.paginas}}</small></h3>
     </div>
     <div class="col-md-4">
       <label for="quantia"> Quantia:</label> 	<input type="number" min="1" max="{{livroID.estoque}}" ng-model="quantia" required ></input>

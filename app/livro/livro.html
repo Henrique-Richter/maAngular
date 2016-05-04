@@ -28,15 +28,11 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<label for="Formato">Formato:</label>
-					<p>
-					<label for="dura">Capa dura:</label>
-					<input id="dura" type="radio" ng-value="dura" name="formato" ng-model="ctrl.livro.formato">
-				</p>
-				<p>
-					<label for="brochura">Brochura:</label>
-					<input id="brochura" type="radio" ng-value="brochura" name="formato" ng-model="ctrl.livro.formato">
-				</p>
+				<label for="formato">Formato:</label><select class="form-control" name="formato" ng-model="ctrl.livro.formato" required>
+					<option   value="Capa dura">Capa dura</option>
+					<option   value="Brochura">Brochura</option>
+				</select>
+				<span ng-show="myForm.formato.$touched && myForm.formato.$invalid">Selecione um formato</span>
 			</div>
 		</div>
 		<div class="row">
@@ -76,7 +72,7 @@
 				<label for="editora">Editora:</label><select class="form-control" name="editora" ng-model="ctrl.livro.editora_id" required>
 					<option ng-repeat="editora in editora" value="{{ editora.id }}">{{ editora.nome }}</option>
 				</select>
-				<span ng-show="myForm.editora.$touched && myForm.editora.$invalid">Selecione ao menos uma editora</span>
+				<span ng-show="myForm.editora.$touched && myForm.editora.$invalid">Selecione  uma editora</span>
 			</div>
 		</div>
 		<div class="row">

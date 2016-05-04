@@ -33,8 +33,9 @@ angular.module('myApp.livroController', ['ngRoute'])
       resumo: '',
       indice: '',
       isbn: '',
-      dtPublicacao:''
-
+      dtPublicacao:'',
+      paginas: '',
+      formato: ''
 
     }
   };
@@ -50,8 +51,9 @@ angular.module('myApp.livroController', ['ngRoute'])
     resumo: '',
     indice: '',
     isbn: '',
-    dtPublicacao:''
-
+    dtPublicacao:'',
+    paginas: '',
+    formato: ''
   };
 
   this.salvar = function() {
