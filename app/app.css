@@ -30,5 +30,9 @@
 }
 
 .panel-body {
-  overflow-wrap: break-word;  
+  overflow-wrap: break-word;
+}
+
+.editora-wrap {
+  padding: 20px;
 }

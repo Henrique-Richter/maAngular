@@ -96,7 +96,7 @@ angular.module('myApp.indexController', ['ngRoute'])
 		}
 		return total;
 	}
-	var timerCount = 10;
+	var timerCount = 1200;
 	$scope.countdown = function() {
 
 		var countDown = function () {
